@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  ══════════════════════════════════════════════
+  NETHASHA DE SILVA — PORTFOLIO  v5
+  Changes from v4:
+  1.  Hero: reduced gap between name & typing title
+  2.  Hero bio: shorter, cleaner description
+  3.  About: cleaner description text
+  4.  Download CV: points to pdf/Nethasha_CV.pdf
+  5.  Skills: removed UI/UX Designer & Adobe XD,
+      replaced with User Research skill bar
+  6.  Added Python certificate card
+  7.  Portfolio: horizontal slider (scroll) with
+      correct GitHub links per project
+  8.  Certifications: removed tip note from UI
+  9.  Footer: dark mode fixed
+  10. Contact icons: SVG icons per type
+  ══════════════════════════════════════════════
+-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nethasha De Silva | UI/UX & Frontend Developer</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-wrap">
+    <a href="#home" class="logo">Nethasha</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"           class="nav-a active">Home</a></li>
+      <li><a href="#about"          class="nav-a">About</a></li>
+      <li><a href="#skills"         class="nav-a">Skills</a></li>
+      <li><a href="#services"       class="nav-a">Services</a></li>
+      <li><a href="#portfolio"      class="nav-a">Portfolio</a></li>
+      <li><a href="#certifications" class="nav-a">Certificates</a></li>
+      <li><a href="#contact"        class="nav-a">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="mode-btn" id="modeBtn" title="Toggle theme" aria-label="Toggle theme">
+        <span class="mode-icon" id="modeIcon">🌙</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════
+     HERO SECTION
+     CHANGE 1: Reduced gap between name and
+     typing title (.hero-name margin-bottom reduced)
+     CHANGE 2: Bio text shortened & cleaner
+══════════════════════════════════════════ -->
+<section id="home" class="hero">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+
+  <div class="hero-inner">
+
+    <!-- Sidebar social icons -->
+    <div class="hero-sidebar">
+      <a href="https://linkedin.com/in/rivindi-nethasha-2887a2370" target="_blank" class="sidebar-icon" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://github.com/NethashaDeSilva" target="_blank" class="sidebar-icon" title="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      </a>
+      <a href="mailto:rivindinethasha@gmail.com" class="sidebar-icon" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+      </a>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-text">
+      <!-- Typing role label — CHANGE 1: tight gap via CSS -->
+      <p class="hero-role-label hero-role-big anim-fadein d1">
+        <span id="typingRole">UI/UX Designer</span><span class="type-cursor">|</span>
+      </p>
+      <!-- CHANGE 1: hero-name has reduced bottom margin in CSS -->
+      <h1 class="hero-name anim-fadein d2">Hi, I'am <em>Nethasha</em></h1>
+      <!-- CHANGE 2: shorter bio -->
+      <p class="hero-bio anim-fadein d3">
+        3rd-year IT undergraduate at SLIIT · UI/UX Designer &amp; Engineer Intern
+        at <strong>CodeGen International</strong> · Passionate about building
+        beautiful, user-centred digital experiences.
+      </p>
+      <a href="#contact" class="btn btn-primary anim-fadein d4">
+        Contact Me
+        <svg viewBox="0 0 20 20" fill="currentColor" width="16"><path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/></svg>
+      </a>
+    </div>
+
+    <!-- Avatar -->
+    <div class="hero-avatar anim-fadein d3">
+      <div class="avatar-circle">
+  <img src="images/photo id.jpg" alt="Nethasha" class="hero-img">
+</div>
+      <div class="avatar-orbit"></div>
+    </div>
+
+  </div>
+
+  <a href="#about" class="scroll-down">
+    <span>Scroll down</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </a>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     ABOUT ME
+     CHANGE 3: cleaner description text
+     CHANGE 4: CV download → pdf/Nethasha_CV.pdf
+══════════════════════════════════════════ -->
+<section id="about" class="section">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <h2>About Me</h2>
+      <p class="section-sub">My Introduction</p>
+    </div>
+
+    <div class="about-modern">
+
+      <!-- Left: photo + stats -->
+      <div class="about-left reveal">
+        <div class="photo-card">
+         <img src="images/photo 1 red and white.jpeg" alt="Nethasha" class="about-img">
+          <span class="corner tl"></span>
+          <span class="corner br"></span>
+          <div class="photo-tag">
+            <span class="photo-tag-dot"></span> Available for opportunities
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <strong class="count" data-to="3">0</strong><span>+</span>
+            <p>Years study</p>
+          </div>
+          <div class="stat">
+            <strong class="count" data-to="7">0</strong><span>+</span>
+            <p>Projects</p>
+          </div>
+          <div class="stat">
+            <strong class="count" data-to="3">0</strong><span>+</span>
+            <p>Certs</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: content -->
+      <div class="about-right reveal">
+
+        <div class="about-headline">
+          <h3 class="about-name">S. Rivindi Nethasha De Silva</h3>
+          <div class="about-badges">
+            <span class="abadge abadge-purple">UI/UX Designer</span>
+            <span class="abadge abadge-violet">Frontend Developer</span>
+            <span class="abadge abadge-indigo">QA Engineer</span>
+          </div>
+        </div>
+
+        <!-- CHANGE 3: cleaner about description -->
+        <p class="about-desc">
+          I'm a passionate IT undergraduate at <strong>SLIIT, Malabe</strong>,
+          specialising in UI/UX design and frontend development. Currently gaining
+          hands-on experience as a <strong>UI/UX Designer &amp; Engineer Intern at
+          CodeGen International</strong>, where I build responsive web and mobile
+          apps for B2C &amp; B2B platforms using Figma, React, and Next.js.
+          I bring strong problem-solving skills, a fast-learner mindset, and
+          leadership qualities to every project.
+        </p>
+
+        <!-- Info grid pills -->
+        <div class="about-info-grid">
+          <div class="info-pill">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <div><span class="info-key">Location</span><span class="info-val">Hokandara, Sri Lanka</span></div>
+          </div>
+          <div class="info-pill">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+            <div><span class="info-key">Email</span><a href="mailto:rivindinethasha@gmail.com" class="info-val info-link">rivindinethasha@gmail.com</a></div>
+          </div>
+          <div class="info-pill">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.07 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            <div><span class="info-key">Phone</span><a href="tel:+94704274755" class="info-val info-link">+94 70 427 4755</a></div>
+          </div>
+          <div class="info-pill">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <div><span class="info-key">University</span><span class="info-val">SLIIT (2022–2026)</span></div>
+          </div>
+          <div class="info-pill">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            <div><span class="info-key">LinkedIn</span><a href="https://linkedin.com/in/rivindi-nethasha-2887a2370" target="_blank" class="info-val info-link">rivindi-nethasha</a></div>
+          </div>
+          <div class="info-pill">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <div><span class="info-key">GitHub</span><a href="https://github.com/NethashaDeSilva" target="_blank" class="info-val info-link">NethashaDeSilva</a></div>
+          </div>
+        </div>
+
+        <div class="about-languages">
+          <span class="lang-label">Languages:</span>
+          <span class="lang-chip">🇱🇰 Sinhala</span>
+          <span class="lang-chip">🇬🇧 English</span>
+        </div>
+
+        <!--
+          CHANGE 4: CV Download — HOW THIS WORKS:
+          1. Inside your project folder, there is a "pdf" folder
+          2. Place your CV file inside it named: Nethasha_CV.pdf
+          3. The download attribute tells the browser to download it
+          4. Path: pdf/Nethasha_CV.pdf
+        -->
+        <a href="pdf/Nethasha_CV.pdf" class="btn btn-outline" download="Nethasha_De_Silva_CV.pdf">
+          Download CV
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SKILLS
+     CHANGE 5:
+     - Removed "UI/UX Designer" accordion group
+     - Removed "Adobe XD" bar
+     - Added "User Research" bar to Frontend group
+     - Design group now: Figma, Canva, Wireframing,
+       User Research, Prototyping
+══════════════════════════════════════════ -->
+<section id="skills" class="section section-alt">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Skills</h2>
+      <p class="section-sub">My technical level</p>
+    </div>
+    <div class="skills-wrap reveal">
+
+      <!-- Frontend Developer (open by default) -->
+      <div class="skill-group open">
+        <div class="skill-group-hd" onclick="toggleSkill(this)">
+          <div class="sg-left">
+            <span class="sg-icon">{ }</span>
+            <div><p class="sg-title">Frontend Developer</p><p class="sg-sub">More than 3 years</p></div>
+          </div>
+          <span class="sg-chevron">▲</span>
+        </div>
+        <div class="skill-group-body">
+          <div class="skill-bar-row"><div class="sb-label"><span>HTML</span><span>90%</span></div><div class="sb-track"><div class="sb-fill" data-w="90"></div></div></div>
+          <div class="skill-bar-row"><div class="sb-label"><span>CSS / Sass</span><span>90%</span></div><div class="sb-track"><div class="sb-fill" data-w="90"></div></div></div>
+          <div class="skill-bar-row"><div class="sb-label"><span>JavaScript</span><span>80%</span></div><div class="sb-track"><div class="sb-fill" data-w="80"></div></div></div>
+          <div class="skill-bar-row"><div class="sb-label"><span>React.js</span><span>82%</span></div><div class="sb-track"><div class="sb-fill" data-w="82"></div></div></div>
+          <div class="skill-bar-row"><div class="sb-label"><span>Next.js</span><span>70%</span></div><div class="sb-track"><div class="sb-fill" data-w="70"></div></div></div>
+          <!-- CHANGE 5: Added User Research -->
+          <div class="skill-bar-row"><div class="sb-label"><span>User Research</span><span>78%</span></div><div class="sb-track"><div class="sb-fill" data-w="78"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Design Tools (NO Adobe XD, NO UI/UX Designer label) -->
+      <div class="skill-group">
+        <div class="skill-group-hd" onclick="toggleSkill(this)">
+          <div class="sg-left">
+            <span class="sg-icon">✦</span>
+            <div><p class="sg-title">Design Tools</p><p class="sg-sub">More than 3 years</p></div>
+          </div>
+          <span class="sg-chevron">▼</span>
+        </div>
+        <div class="skill-group-body" style="display:none">
+          <div class="skill-bar-row"><div class="sb-label"><span>Figma</span><span>90%</span></div><div class="sb-track"><div class="sb-fill" data-w="90"></div></div></div>
+          <div class="skill-bar-row"><div class="sb-label"><span>Canva</span><span>85%</span></div><div class="sb-track"><div class="sb-fill" data-w="85"></div></div></div>
+          <div class="skill-bar-row"><div class="sb-label"><span>Wireframing</span><span>88%</span></div><div class="sb-track"><div class="sb-fill" data-w="88"></div></div></div>
+          <div class="skill-bar-row"><div class="sb-label"><span>Prototyping</span><span>85%</span></div><div class="sb-track"><div class="sb-fill" data-w="85"></div></div></div>
+          <div class="skill-bar-row"><div class="sb-label"><span>User Research</span><span>78%</span></div><div class="sb-track"><div class="sb-fill" data-w="78"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Backend Developer -->
+      <div class="skill-group">
+        <div class="skill-group-hd" onclick="toggleSkill(this)">
+          <div class="sg-left">
+            <span class="sg-icon">⚙</span>
+            <div><p class="sg-title">Backend Developer</p><p class="sg-sub">More than 2 years</p></div>
+          </div>
+          <span class="sg-chevron">▼</span>
+        </div>
+        <div class="skill-group-body" style="display:none">
+          <div class="skill-bar-row"><div class="sb-label"><span>Node.js / Express</span><span>72%</span></div><div class="sb-track"><div class="sb-fill" data-w="72"></div></div></div>
+          <div class="skill-bar-row"><div class="sb-label"><span>Spring Boot</span><span>65%</span></div><div class="sb-track"><div class="sb-fill" data-w="65"></div></div></div>
+          <div class="skill-bar-row"><div class="sb-label"><span>MongoDB</span><span>70%</span></div><div class="sb-track"><div class="sb-fill" data-w="70"></div></div></div>
+          <div class="skill-bar-row"><div class="sb-label"><span>MySQL / SQL</span><span>68%</span></div><div class="sb-track"><div class="sb-fill" data-w="68"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Mobile Developer -->
+      <div class="skill-group">
+        <div class="skill-group-hd" onclick="toggleSkill(this)">
+          <div class="sg-left">
+            <span class="sg-icon">📱</span>
+            <div><p class="sg-title">Mobile Developer</p><p class="sg-sub">More than 1 year</p></div>
+          </div>
+          <span class="sg-chevron">▼</span>
+        </div>
+        <div class="skill-group-body" style="display:none">
+          <div class="skill-bar-row"><div class="sb-label"><span>Android (Kotlin / XML)</span><span>70%</span></div><div class="sb-track"><div class="sb-fill" data-w="70"></div></div></div>
+          <div class="skill-bar-row"><div class="sb-label"><span>React Native</span><span>60%</span></div><div class="sb-track"><div class="sb-fill" data-w="60"></div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     QUALIFICATIONS
+     Work first · Education second · Certificates tab
+══════════════════════════════════════════ -->
+<section id="qualifications" class="section">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Qualification</h2>
+      <p class="section-sub">My personal journey</p>
+    </div>
+
+    <div class="qual-tabs reveal">
+      <button class="qtab active" onclick="switchQTab('work', this)">💼 Work Experience</button>
+      <button class="qtab"        onclick="switchQTab('education', this)">🎓 Education</button>
+      <button class="qtab"        onclick="switchQTab('qcerts', this)">🏅 Certificates</button>
+    </div>
+
+    <!-- Work (active first) -->
+    <div class="qual-panel active reveal" id="work">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-info">
+            <h4>UI/UX Designer &amp; Engineer Intern</h4>
+            <p class="tl-place">CodeGen International (Pvt) Ltd</p>
+            <p class="tl-date">Sep 2025 – Mar 2026</p>
+            <ul class="tl-bullets">
+              <li>Designed &amp; developed responsive web/mobile apps for B2C &amp; B2B platforms</li>
+              <li>Created UI/UX in Figma; implemented with HTML, CSS, Sass, JS, React &amp; Next.js</li>
+              <li>Collaborated to debug and resolve UI-related production issues</li>
+              <li>Participated in Agile sprint cycles, code reviews and QA testing</li>
+              <li>Focused on user-centred design, usability and modern frontend best practices</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="qual-panel reveal" id="education">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-info">
+            <h4>BSc (Hons) in Information Technology</h4>
+            <p class="tl-place">Sri Lanka Institute of Information Technology (SLIIT)</p>
+            <p class="tl-date">2022 – 2026 · Malabe, Sri Lanka</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-info">
+            <h4>GCE Advanced Level — Commerce Stream</h4>
+            <p class="tl-place">Girls High School, Mt. Lavinia</p>
+            <p class="tl-date">2021 · Mount Lavinia, Sri Lanka</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificates (inside qual section) -->
+    <div class="qual-panel reveal" id="qcerts">
+      <div class="cert-tab-list">
+        <div class="cert-tab-card">
+          <div class="cert-tab-icon">🏅</div>
+          <div class="cert-tab-info">
+            <h4>Web Design for Beginners</h4>
+            <p class="cert-issuer">University of Moratuwa</p>
+            <a href="https://open.uom.lk/verify/aAKE3ivvBz" target="_blank" class="cert-verify-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Verify Certificate
+            </a>
+          </div>
+        </div>
+        <div class="cert-tab-card">
+          <div class="cert-tab-icon">🏅</div>
+          <div class="cert-tab-info">
+            <h4>Front-End Web Development</h4>
+            <p class="cert-issuer">University of Moratuwa</p>
+            <a href="https://open.uom.lk/verify/iYEeqyAFrH" target="_blank" class="cert-verify-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Verify Certificate
+            </a>
+          </div>
+        </div>
+        <!-- CHANGE 6: Python certificate added -->
+        <div class="cert-tab-card">
+          <div class="cert-tab-icon">🐍</div>
+          <div class="cert-tab-info">
+            <h4>Python for Beginners</h4>
+            <p class="cert-issuer">Add your issuer here (e.g. Coursera / UoM)</p>
+          </div>
+        </div>
+        <div class="cert-tab-card">
+          <div class="cert-tab-icon">🏆</div>
+          <div class="cert-tab-info">
+            <h4>All Island Finalist — Prose Reading</h4>
+            <p class="cert-issuer">British &amp; International Federation, U.K</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════ -->
+<section id="services" class="section section-alt">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Services</h2>
+      <p class="section-sub">What I offer</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon">🎨</div>
+        <h3>UI/UX Designer</h3>
+        <p>Crafting beautiful, intuitive interfaces using Figma — from wireframes and user flows to high-fidelity prototypes focused on usability.</p>
+        <a href="#contact" class="svc-link">Learn more →</a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">⌨️</div>
+        <h3>Frontend Developer</h3>
+        <p>Building fast, responsive web applications with React.js, HTML5, CSS3/Sass, Bootstrap, and modern JavaScript best practices.</p>
+        <a href="#contact" class="svc-link">Learn more →</a>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">🧪</div>
+        <h3>QA &amp; Testing</h3>
+        <p>Manual testing, test case design, bug reporting, and functional validation to ensure high-quality, defect-free software products.</p>
+        <a href="#contact" class="svc-link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PORTFOLIO — CHANGE 7: SLIDER SECTION
+     Horizontal scrollable slider with prev/next
+     arrows and dot indicators.
+
+     HOW TO ADD MORE PROJECTS:
+     Copy any .slide-card div and paste it inside
+     .slider-track. Update title, desc, tags,
+     GitHub link, and Demo link.
+
+     HOW DEMO LINKS WORK:
+     - When your project is hosted (e.g. on Netlify,
+       Vercel, GitHub Pages), you get a URL like:
+       https://my-project.netlify.app
+     - Paste that URL into href="YOUR_URL_HERE"
+       on the Demo button of that project card.
+     - Until then, leave it as href="#" or remove
+       the Demo button entirely.
+══════════════════════════════════════════ -->
+<section id="portfolio" class="section">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <h2>Portfolio</h2>
+      <p class="section-sub">My recent work — scroll or use arrows</p>
+    </div>
+
+    <!-- Slider wrapper -->
+    <div class="slider-outer reveal">
+      <!-- Prev arrow -->
+      <button class="slider-arrow arrow-prev" id="sliderPrev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <!-- The scrollable track -->
+      <div class="slider-track" id="sliderTrack">
+
+        <!-- ── Project 1: HomeStock ── -->
+        <div class="slide-card">
+          <div class="slide-thumb thumb-1"><span>🏠</span></div>
+          <div class="slide-info">
+            <div class="slide-year">2025</div>
+            <h3>HomeStock Web App</h3>
+            <p class="slide-ctx">ITPM Group · 3rd Year</p>
+            <p class="slide-desc">Grocery TODO List with full CRUD. Designed wireframes for usability; implemented REST API with manual testing &amp; user flow validation.</p>
+            <div class="slide-tags">
+              <span>MERN Stack</span><span>React.js</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+            <div class="slide-btns">
+              <!--
+                GitHub: change href to your actual repo URL
+                e.g. https://github.com/NethashaDeSilva/HomeStock
+              -->
+              <a href="https://github.com/NethashaDeSilva/HomeStock" target="_blank" class="slide-btn slide-btn-gh">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                GitHub
+              </a>
+              <!--
+                Demo: replace href with your hosted URL
+                e.g. https://homestock.netlify.app
+                Until hosted, keep href="#" — it won't break anything
+              -->
+              <a href="#" class="slide-btn slide-btn-demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Project 2: Social Media Food App ── -->
+        <div class="slide-card">
+          <div class="slide-thumb thumb-2"><span>📱</span></div>
+          <div class="slide-info">
+            <div class="slide-year">2025</div>
+            <h3>Social Media Food App</h3>
+            <p class="slide-ctx">PAF Group Project</p>
+            <p class="slide-desc">Post Management System with 4 full CRUD modules. Responsive frontend, Spring Boot REST APIs, and comprehensive test cases.</p>
+            <div class="slide-tags">
+              <span>React.js</span><span>Spring Boot</span><span>MySQL</span><span>CSS</span>
+            </div>
+            <div class="slide-btns">
+              <a href="https://github.com/NethashaDeSilva/PAF-Social-Media-Food-App" target="_blank" class="slide-btn slide-btn-gh">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                GitHub
+              </a>
+              <a href="#" class="slide-btn slide-btn-demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Project 3: Online Candy Shop ── -->
+        <div class="slide-card">
+          <div class="slide-thumb thumb-3"><span>🍬</span></div>
+          <div class="slide-info">
+            <div class="slide-year">Jul 2024</div>
+            <h3>Online Candy Shop</h3>
+            <p class="slide-ctx">ITP Group Project</p>
+            <p class="slide-desc">Inventory Management System on MERN stack with full CRUD operations and Postman-tested REST APIs.</p>
+            <div class="slide-tags">
+              <span>MERN Stack</span><span>MongoDB</span><span>Node.js</span><span>JS</span>
+            </div>
+            <div class="slide-btns">
+              <a href="https://github.com/NethashaDeSilva/Online-Candy-Shop" target="_blank" class="slide-btn slide-btn-gh">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                GitHub
+              </a>
+              <a href="#" class="slide-btn slide-btn-demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Project 4: Online Coffee Shop ── -->
+        <div class="slide-card">
+          <div class="slide-thumb thumb-4"><span>☕</span></div>
+          <div class="slide-info">
+            <div class="slide-year">Jul 2024</div>
+            <h3>Online Coffee Shop</h3>
+            <p class="slide-ctx">Mobile App Development</p>
+            <p class="slide-desc">UI/UX designed in Figma, implemented in Android Studio with XML for intuitive navigation and brand aesthetics.</p>
+            <div class="slide-tags">
+              <span>Figma</span><span>Android Studio</span><span>XML</span>
+            </div>
+            <div class="slide-btns">
+              <a href="https://github.com/NethashaDeSilva/Coffee-Shop-Mobile" target="_blank" class="slide-btn slide-btn-gh">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                GitHub
+              </a>
+              <a href="#" class="slide-btn slide-btn-demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Project 5: ToDo List App ── -->
+        <div class="slide-card">
+          <div class="slide-thumb thumb-5"><span>✅</span></div>
+          <div class="slide-info">
+            <div class="slide-year">Jul 2024</div>
+            <h3>ToDo List Mobile App</h3>
+            <p class="slide-ctx">Individual Project</p>
+            <p class="slide-desc">Solo Android app — Figma UI/UX design, Kotlin, SQLite via Room Library, Shared Preferences for local data persistence.</p>
+            <div class="slide-tags">
+              <span>Kotlin</span><span>Android Studio</span><span>SQLite</span><span>Figma</span>
+            </div>
+            <div class="slide-btns">
+              <a href="https://github.com/NethashaDeSilva/ToDo-List-App" target="_blank" class="slide-btn slide-btn-gh">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                GitHub
+              </a>
+              <a href="#" class="slide-btn slide-btn-demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Project 6: Computer Parts Shop ── -->
+        <div class="slide-card">
+          <div class="slide-thumb thumb-6"><span>🖥️</span></div>
+          <div class="slide-info">
+            <div class="slide-year">Feb 2024</div>
+            <h3>Online Computer Parts Shop</h3>
+            <p class="slide-ctx">OOP Group · Project Leader</p>
+            <p class="slide-desc">Led team as Project Leader; built Inventory Management using Java OOP, Apache Tomcat, MVC architecture.</p>
+            <div class="slide-tags">
+              <span>Java</span><span>Tomcat</span><span>MVC</span><span>SQL</span>
+            </div>
+            <div class="slide-btns">
+              <a href="https://github.com/NethashaDeSilva/Computer-Parts-Shop" target="_blank" class="slide-btn slide-btn-gh">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                GitHub
+              </a>
+              <a href="#" class="slide-btn slide-btn-demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Project 7: Help Desk ── -->
+        <div class="slide-card">
+          <div class="slide-thumb thumb-7"><span>🎓</span></div>
+          <div class="slide-info">
+            <div class="slide-year">Jul 2023</div>
+            <h3>Help Desk for University Students</h3>
+            <p class="slide-ctx">IWT Group Project</p>
+            <p class="slide-desc">User Account System allowing students to raise and manage support tickets using PHP, HTML, CSS and MySQL.</p>
+            <div class="slide-tags">
+              <span>PHP</span><span>HTML</span><span>CSS</span><span>SQL</span>
+            </div>
+            <div class="slide-btns">
+              <a href="https://github.com/NethashaDeSilva/Help-Desk" target="_blank" class="slide-btn slide-btn-gh">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                GitHub
+              </a>
+              <a href="#" class="slide-btn slide-btn-demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          ══ ADD MORE PROJECTS HERE ══
+          Copy the block below and paste it inside this .slider-track
+          Change: thumb class (thumb-1 to thumb-7), emoji, year, title,
+          context, description, tags, and GitHub/Demo links.
+
+          <div class="slide-card">
+            <div class="slide-thumb thumb-1"><span>🚀</span></div>
+            <div class="slide-info">
+              <div class="slide-year">2025</div>
+              <h3>My New Project</h3>
+              <p class="slide-ctx">Project Type</p>
+              <p class="slide-desc">Project description here.</p>
+              <div class="slide-tags"><span>Tag1</span><span>Tag2</span></div>
+              <div class="slide-btns">
+                <a href="https://github.com/NethashaDeSilva/REPO-NAME" target="_blank" class="slide-btn slide-btn-gh">GitHub</a>
+                <a href="https://your-live-url.netlify.app" class="slide-btn slide-btn-demo">Demo</a>
+              </div>
+            </div>
+          </div>
+        -->
+
+      </div><!-- /slider-track -->
+
+      <!-- Next arrow -->
+      <button class="slider-arrow arrow-next" id="sliderNext" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div><!-- /slider-outer -->
+
+    <!-- Dot indicators -->
+    <div class="slider-dots" id="sliderDots"></div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════════ -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <div>
+      <h2>You have a new project?</h2>
+      <p>Contact me to bring your vision to life with elegant, performant web solutions.</p>
+    </div>
+    <a href="#contact" class="btn btn-white">Contact Me →</a>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     CERTIFICATIONS — FINAL CLEAN VERSION
+══════════════════════════════════════════ -->
+<section id="certifications" class="section section-alt">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <h2>Certifications</h2>
+      <p class="section-sub">My achievements &amp; credentials</p>
+    </div>
+
+    <div class="certs-grid">
+
+      <!-- Cert 1 -->
+      <div class="cert-card reveal">
+        <div class="cert-img-wrap">
+          <img src="images/Web_Design_for_Beginners_E-Certificate.png"
+               alt="Web Design Certificate"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="cert-img-fallback">
+            <span>🏅</span>
+            <p>Add image:<br/><code>images/Web_Design_for_Beginners_E-Certificate.png</code></p>
+          </div>
+        </div>
+
+        <div class="cert-body">
+          <div class="cert-badge">Certificate</div>
+          <h3>Web Design for Beginners</h3>
+          <p class="cert-issuer-name">
+            University of Moratuwa
+          </p>
+          <a href="https://open.uom.lk/verify/aAKE3ivvBz" target="_blank" class="cert-verify-btn">
+            Verify
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 2 -->
+      <div class="cert-card reveal">
+        <div class="cert-img-wrap">
+          <img src="images/Front-End_Web_Development_E-Certificate.png"
+               alt="Front-End Web Dev Certificate"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="cert-img-fallback">
+            <span>🏅</span>
+            <p>Add image:<br/><code>images/Front-End_Web_Development_E-Certificate.png</code></p>
+          </div>
+        </div>
+
+        <div class="cert-body">
+          <div class="cert-badge">Certificate</div>
+          <h3>Front-End Web Development</h3>
+          <p class="cert-issuer-name">
+            University of Moratuwa
+          </p>
+          <a href="https://open.uom.lk/verify/iYEeqyAFrH" target="_blank" class="cert-verify-btn">
+            Verify
+          </a>
+        </div>
+      </div>
+
+      <!-- Cert 3 -->
+      <div class="cert-card reveal">
+        <div class="cert-img-wrap">
+          <img src="images/Python_for_Beginners_E-Certificate.png"
+               alt="Python Certificate"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="cert-img-fallback">
+            <span>🐍</span>
+            <p>Add image:<br/><code>images/Python_for_Beginners_E-Certificate.png</code></p>
+          </div>
+        </div>
+
+        <div class="cert-body">
+          <div class="cert-badge">Certificate</div>
+          <h3>Python for Beginners</h3>
+          <p class="cert-issuer-name">
+            Add issuer (e.g. Coursera)
+          </p>
+        </div>
+      </div>
+
+      <!-- Cert 4 -->
+      <div class="cert-card reveal">
+        <div class="cert-img-wrap">
+          <img src="images/cert-prose.jpg"
+               alt="All Island Finalist Certificate"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="cert-img-fallback">
+            <span>🏆</span>
+            <p>Add image:<br/><code>images/cert-prose.jpg</code></p>
+          </div>
+        </div>
+
+        <div class="cert-body">
+          <div class="cert-badge cert-badge-gold">Achievement</div>
+          <h3>All Island Finalist — Prose Reading</h3>
+          <p class="cert-issuer-name">
+            British &amp; International Federation, U.K
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /certs-grid -->
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════ -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Testimonial</h2>
+      <p class="section-sub">My clients say</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Nethasha transformed our app UI into something truly stunning. Her attention to detail and fast delivery exceeded all our expectations. A true professional!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RH</div>
+          <div><p class="testi-name">Raul Harris</p><p class="testi-role">Frontend Developer</p></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Working with Nethasha was a great experience. She understood our brand vision and delivered pixel-perfect designs ahead of schedule. Highly recommended!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SS</div>
+          <div><p class="testi-name">Sara Smith</p><p class="testi-role">Entrepreneur</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CONTACT — CHANGE 10: SVG icons per type
+══════════════════════════════════════════ -->
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Contact Me</h2>
+      <p class="section-sub">Get in touch</p>
+    </div>
+    <div class="contact-grid">
+
+      <div class="contact-details reveal">
+        <!-- Phone -->
+        <a href="tel:+94704274755" class="contact-item">
+          <div class="ci-icon ci-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.07 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          </div>
+          <div><p class="ci-label">Call Me</p><p class="ci-val">+94 70 427 4755</p></div>
+        </a>
+        <!-- Email -->
+        <a href="mailto:rivindinethasha@gmail.com" class="contact-item">
+          <div class="ci-icon ci-email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+          </div>
+          <div><p class="ci-label">Email</p><p class="ci-val">rivindinethasha@gmail.com</p></div>
+        </a>
+        <!-- Location -->
+        <a href="https://maps.google.com/?q=Hokandara+South,Sri+Lanka" target="_blank" class="contact-item">
+          <div class="ci-icon ci-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <div><p class="ci-label">Location</p><p class="ci-val">Hokandara, Sri Lanka 🇱🇰</p></div>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/rivindi-nethasha-2887a2370" target="_blank" class="contact-item">
+          <div class="ci-icon ci-linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <div><p class="ci-label">LinkedIn</p><p class="ci-val">rivindi-nethasha-2887a2370</p></div>
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/NethashaDeSilva" target="_blank" class="contact-item">
+          <div class="ci-icon ci-github">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </div>
+          <div><p class="ci-label">GitHub</p><p class="ci-val">github.com/NethashaDeSilva</p></div>
+        </a>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-wrap reveal">
+        <form id="contactForm" onsubmit="sendMsg(event)">
+          <div class="form-row">
+            <div class="form-g"><label>Name</label><input type="text" id="cName" placeholder="Your Name" required/></div>
+            <div class="form-g"><label>Email</label><input type="email" id="cEmail" placeholder="Your Email" required/></div>
+          </div>
+          <div class="form-g"><label>Subject</label><input type="text" id="cSubject" placeholder="What's this about?"/></div>
+          <div class="form-g"><label>Message</label><textarea id="cMsg" rows="5" placeholder="Tell me about your project…" required></textarea></div>
+          <button type="submit" class="btn btn-primary w100" id="sendBtn">
+            Send Message
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <p class="form-msg" id="formMsg"></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER — CHANGE 9: dark mode fixed
+     footer uses var(--text) as bg which is dark
+     in light mode. Fixed to use a dedicated
+     footer-bg variable.
+══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-wrap">
+    <p class="footer-logo">Nethasha<span>.</span></p>
+    <p class="footer-tag">S. Rivindi Nethasha De Silva · UI/UX Designer &amp; Frontend Developer · Sri Lanka 🇱🇰</p>
+    <nav class="footer-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#certifications">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer-socials">
+      <a href="https://linkedin.com/in/rivindi-nethasha-2887a2370" target="_blank">LinkedIn</a>
+      <a href="https://github.com/NethashaDeSilva" target="_blank">GitHub</a>
+      <a href="mailto:rivindinethasha@gmail.com">Email</a>
+    </div>
+    <p class="footer-copy">© 2025 Nethasha De Silva. Crafted with ❤️ in Sri Lanka.</p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
