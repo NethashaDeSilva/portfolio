@@ -302,42 +302,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ══════════════════════════════════════════
      15. CONTACT FORM — EmailJS
-     ══════════════════════════════════════════
 
-     YOUR 3 BUGS (explained):
-
-     BUG 1 — Extra }) before .then():
-     ─────────────────────────────────────────
-     BROKEN:
-       emailjs.send("id","tmpl",{...})
-       })           ← this }) was floating here, closing nothing
-       .then(...)
-
-     FIXED:
-       emailjs.send("id","tmpl",{...})
-       .then(...)   ← chain directly, no extra })
-
-     BUG 2 — Stray }) after .then() block:
-     ─────────────────────────────────────────
-     BROKEN:
-       .then(() => { ... })
-       })           ← another extra }) that closed nothing
-       .catch(...)
-
-     FIXED:
-       .then(() => { ... })
-       .catch(...)  ← chain directly
-
-     BUG 3 — Bare ; after the function body:
-     ─────────────────────────────────────────
-     BROKEN:
-       .catch((err) => { ... });
-       ;            ← extra semicolon after sendMsg's closing }
-
-     FIXED:
-       .catch((err) => { ... });
-                    ← semicolon only at the end of .catch(), not after }
-     ══════════════════════════════════════════ */
+══════════════════════════════════════════ */
 
   window.sendMsg = function(e) {
     e.preventDefault();
