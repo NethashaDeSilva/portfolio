@@ -1,6 +1,13 @@
 /* ══════════════════════════════════════════════
    NETHASHA DE SILVA — PORTFOLIO  |  script.js  v5
+   EmailJS integrated — all syntax errors fixed
    ══════════════════════════════════════════════ */
+
+/* ── EmailJS init — runs immediately on page load ── */
+(function () {
+  emailjs.init("vdp4OrKnVgtZ7Hybj");
+})();
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -28,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
   /* 2. NAVBAR SCROLL + ACTIVE LINK */
   const navbar   = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-a');
@@ -36,9 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
     let current = '';
-    sections.forEach(sec => { if (window.scrollY >= sec.offsetTop - 130) current = sec.id; });
-    navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 130) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
   }, { passive: true });
+
 
   /* 3. MOBILE HAMBURGER */
   const burger   = document.getElementById('burger');
@@ -59,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
   /* 4. SMOOTH SCROLL */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
@@ -70,13 +84,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
   /* 5. SCROLL REVEAL */
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('in-view'); revealObs.unobserve(entry.target); }
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObs.unobserve(entry.target);
+      }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
 
   /* 6. STAGGERED CHILD ENTRANCE */
   const staggerMap = [
@@ -91,11 +110,17 @@ document.addEventListener('DOMContentLoaded', () => {
   staggerMap.forEach(({ wrap, child }) => {
     document.querySelectorAll(wrap).forEach(container => {
       const kids = container.querySelectorAll(child);
-      kids.forEach(k => { k.style.opacity = '0'; k.style.transform = 'translateY(18px)'; k.style.transition = 'opacity .5s ease, transform .5s ease'; });
+      kids.forEach(k => {
+        k.style.opacity    = '0';
+        k.style.transform  = 'translateY(18px)';
+        k.style.transition = 'opacity .5s ease, transform .5s ease';
+      });
       const obs = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            kids.forEach((k, i) => { setTimeout(() => { k.style.opacity = '1'; k.style.transform = 'none'; }, i * 85); });
+            kids.forEach((k, i) => {
+              setTimeout(() => { k.style.opacity = '1'; k.style.transform = 'none'; }, i * 85);
+            });
             obs.unobserve(entry.target);
           }
         });
@@ -104,15 +129,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
   /* 7. SKILL BAR ANIMATION */
   function animateBars(group) {
-    group.querySelectorAll('.sb-fill').forEach(bar => { setTimeout(() => { bar.style.width = (bar.dataset.w || 0) + '%'; }, 120); });
+    group.querySelectorAll('.sb-fill').forEach(bar => {
+      setTimeout(() => { bar.style.width = (bar.dataset.w || 0) + '%'; }, 120);
+    });
   }
   const openGroup = document.querySelector('.skill-group.open');
   if (openGroup) {
-    const bObs = new IntersectionObserver(entries => { if (entries[0].isIntersecting) { animateBars(openGroup); bObs.disconnect(); } }, { threshold: 0.3 });
+    const bObs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) { animateBars(openGroup); bObs.disconnect(); }
+    }, { threshold: 0.3 });
     bObs.observe(openGroup);
   }
+
 
   /* 8. SKILL ACCORDION */
   window.toggleSkill = function(hd) {
@@ -120,19 +151,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const isOpen = group.classList.contains('open');
     document.querySelectorAll('.skill-group').forEach(g => {
       g.classList.remove('open');
-      const gb = g.querySelector('.skill-group-body'), chev = g.querySelector('.sg-chevron');
-      if (gb) gb.style.display = 'none';
+      const gb   = g.querySelector('.skill-group-body');
+      const chev = g.querySelector('.sg-chevron');
+      if (gb)   gb.style.display = 'none';
       if (chev) chev.textContent = '▼';
       g.querySelectorAll('.sb-fill').forEach(b => { b.style.width = '0'; });
     });
     if (!isOpen) {
       group.classList.add('open');
-      const gb = group.querySelector('.skill-group-body'), chev = group.querySelector('.sg-chevron');
-      if (gb) gb.style.display = 'block';
+      const gb   = group.querySelector('.skill-group-body');
+      const chev = group.querySelector('.sg-chevron');
+      if (gb)   gb.style.display = 'block';
       if (chev) chev.textContent = '▲';
       setTimeout(() => animateBars(group), 60);
     }
   };
+
 
   /* 9. QUALIFICATION TABS */
   window.switchQTab = function(panelId, btn) {
@@ -143,21 +177,28 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.classList.add('active');
   };
 
+
   /* 10. COUNT-UP ANIMATION */
   const countObs = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const el = entry.target, target = parseInt(el.dataset.to, 10);
+      const el     = entry.target;
+      const target = parseInt(el.dataset.to, 10);
       if (isNaN(target)) return;
-      let curr = 0;
-      const step = Math.ceil(target / 30);
-      const ticker = setInterval(() => { curr = Math.min(curr + step, target); el.textContent = curr; if (curr >= target) clearInterval(ticker); }, 45);
+      let curr     = 0;
+      const step   = Math.ceil(target / 30);
+      const ticker = setInterval(() => {
+        curr = Math.min(curr + step, target);
+        el.textContent = curr;
+        if (curr >= target) clearInterval(ticker);
+      }, 45);
       countObs.unobserve(el);
     });
   }, { threshold: 0.7 });
   document.querySelectorAll('.count').forEach(el => countObs.observe(el));
 
-  /* 11. HERO TYPING — 3 roles only */
+
+  /* 11. HERO TYPING — 3 roles */
   const typingEl = document.getElementById('typingRole');
   if (typingEl) {
     const roles = ['UI/UX Designer', 'Frontend Developer', 'UX Engineer'];
@@ -165,11 +206,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const typeLoop = () => {
       const str = roles[ri];
       if (!deleting) {
-        typingEl.textContent = str.slice(0, ci + 1); ci++;
+        typingEl.textContent = str.slice(0, ci + 1);
+        ci++;
         if (ci === str.length) { deleting = true; setTimeout(typeLoop, 2200); return; }
         setTimeout(typeLoop, 85);
       } else {
-        typingEl.textContent = str.slice(0, ci - 1); ci--;
+        typingEl.textContent = str.slice(0, ci - 1);
+        ci--;
         if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
         setTimeout(typeLoop, 45);
       }
@@ -177,21 +220,18 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeLoop, 1000);
   }
 
+
   /* 12. PARALLAX BLOBS */
   window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    const b1 = document.querySelector('.b1'), b2 = document.querySelector('.b2');
+    const y  = window.scrollY;
+    const b1 = document.querySelector('.b1');
+    const b2 = document.querySelector('.b2');
     if (b1) b1.style.transform = `translateY(${y * 0.08}px)`;
     if (b2) b2.style.transform = `translateY(${-y * 0.05}px)`;
   }, { passive: true });
 
-  /* ──────────────────────────────────────────
-     13. PORTFOLIO SLIDER
-     ─ Prev/Next buttons scroll one card at a time
-     ─ Dot indicators generated from card count
-     ─ Touch/swipe supported
-     ─ Arrow keys work when slider is focused
-  ────────────────────────────────────────── */
+
+  /* 13. PORTFOLIO SLIDER */
   const track    = document.getElementById('sliderTrack');
   const prevBtn  = document.getElementById('sliderPrev');
   const nextBtn  = document.getElementById('sliderNext');
@@ -199,9 +239,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (track) {
     const cards = Array.from(track.querySelectorAll('.slide-card'));
-    const gap   = 22; // matches CSS gap
+    const gap   = 22;
 
-    // Build dot buttons
     if (dotsWrap && cards.length) {
       cards.forEach((_, i) => {
         const dot = document.createElement('button');
@@ -214,10 +253,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Update dots on scroll
     function updateDots() {
       if (!dotsWrap) return;
-      const dots  = dotsWrap.querySelectorAll('.slider-dot');
+      const dots    = dotsWrap.querySelectorAll('.slider-dot');
       const scrollX = track.scrollLeft;
       let closest = 0, minD = Infinity;
       cards.forEach((card, i) => {
@@ -228,12 +266,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     track.addEventListener('scroll', updateDots, { passive: true });
 
-    // Scroll by one card
     function cardWidth() { return (cards[0]?.offsetWidth || 300) + gap; }
     if (prevBtn) prevBtn.addEventListener('click', () => { track.scrollBy({ left: -cardWidth(), behavior: 'smooth' }); });
     if (nextBtn) nextBtn.addEventListener('click', () => { track.scrollBy({ left:  cardWidth(), behavior: 'smooth' }); });
 
-    // Touch swipe
     let touchX = 0;
     track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
     track.addEventListener('touchend',   e => {
@@ -241,7 +277,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (Math.abs(diff) > 40) track.scrollBy({ left: diff > 0 ? cardWidth() : -cardWidth(), behavior: 'smooth' });
     }, { passive: true });
 
-    // Keyboard arrow keys when section is visible
     document.addEventListener('keydown', e => {
       const section = document.getElementById('portfolio');
       if (!section) return;
@@ -253,35 +288,140 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
   /* 14. SERVICE CARD CURSOR GLOW */
   document.querySelectorAll('.svc-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
-      card.style.background = `radial-gradient(circle at ${e.clientX-r.left}px ${e.clientY-r.top}px, rgba(108,71,255,.07), var(--surface) 60%)`;
+      card.style.background =
+        `radial-gradient(circle at ${e.clientX - r.left}px ${e.clientY - r.top}px, rgba(108,71,255,.07), var(--surface) 60%)`;
     });
     card.addEventListener('mouseleave', () => { card.style.background = ''; });
   });
 
-  /* 15. CONTACT FORM — apostrophe fixed with backtick */
+
+  /* ══════════════════════════════════════════
+     15. CONTACT FORM — EmailJS
+     ══════════════════════════════════════════
+
+     YOUR 3 BUGS (explained):
+
+     BUG 1 — Extra }) before .then():
+     ─────────────────────────────────────────
+     BROKEN:
+       emailjs.send("id","tmpl",{...})
+       })           ← this }) was floating here, closing nothing
+       .then(...)
+
+     FIXED:
+       emailjs.send("id","tmpl",{...})
+       .then(...)   ← chain directly, no extra })
+
+     BUG 2 — Stray }) after .then() block:
+     ─────────────────────────────────────────
+     BROKEN:
+       .then(() => { ... })
+       })           ← another extra }) that closed nothing
+       .catch(...)
+
+     FIXED:
+       .then(() => { ... })
+       .catch(...)  ← chain directly
+
+     BUG 3 — Bare ; after the function body:
+     ─────────────────────────────────────────
+     BROKEN:
+       .catch((err) => { ... });
+       ;            ← extra semicolon after sendMsg's closing }
+
+     FIXED:
+       .catch((err) => { ... });
+                    ← semicolon only at the end of .catch(), not after }
+     ══════════════════════════════════════════ */
+
   window.sendMsg = function(e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  const name = document.getElementById('cName').value;
-  const email = document.getElementById('cEmail').value;
-  const message = document.getElementById('cMsg').value;
+    /* Read form values */
+    const name    = document.getElementById('cName')?.value.trim()    || '';
+    const email   = document.getElementById('cEmail')?.value.trim()   || '';
+    const subject = document.getElementById('cSubject')?.value.trim() || '';
+    const message = document.getElementById('cMsg')?.value.trim()     || '';
+    const btn     = document.getElementById('sendBtn');
+    const msgEl   = document.getElementById('formMsg');
 
-  emailjs.init("vdp4OrKnVgtZ7Hybj");
+    /* Validate */
+    if (!name || !email || !message) {
+      if (msgEl) {
+        msgEl.style.color = '#ef4444';
+        msgEl.textContent = '⚠ Please fill all required fields.';
+      }
+      return;
+    }
 
-  emailjs.send("service_1klqta9", "template_abtufjj", {
-    from_name: name,
-    from_email: email,
-    message: message
-  }).then(() => {
-    alert("✅ Message sent successfully!");
-  }, (error) => {
-    alert("❌ Failed to send message");
-    console.log(error);
-  });
-};
+    /* Show sending state */
+    if (btn)   { btn.textContent = 'Sending…'; btn.disabled = true; }
+    if (msgEl) { msgEl.style.color = ''; msgEl.textContent = ''; }
 
-});
+    /*
+      ── emailjs.send() structure (correct) ──
+
+      emailjs.send( serviceID , templateID , params )
+                                                     ↑ .send() ends here
+        .then( successCallback )
+        .catch( errorCallback );
+                               ↑ semicolon goes only here
+    */
+    emailjs.send(
+      "service_nmbv5qs",   // your EmailJS Service ID
+      "template_abtufjj",  // your EmailJS Template ID
+      {
+        from_name:  name,
+        from_email: email,
+        subject:    subject,
+        message:    message,
+      }
+    )
+    .then(function() {
+      /* ── Success ── */
+      if (btn) {
+        btn.textContent      = '✓ Sent!';
+        btn.style.background = '#10b981';
+      }
+      if (msgEl) {
+        msgEl.style.color = '#10b981';
+        msgEl.textContent = `✅ Message sent! I'll get back to you soon 😊`;
+      }
+
+      /* Reset after 3 seconds */
+      setTimeout(function() {
+        if (btn) {
+          btn.textContent      = 'Send Message';
+          btn.style.background = '';
+          btn.disabled         = false;
+        }
+        if (msgEl) msgEl.textContent = '';
+        const form = document.getElementById('contactForm');
+        if (form) form.reset();
+      }, 3000);
+    })
+    .catch(function(error) {
+      /* ── Error ── */
+      console.error('EmailJS error:', error);
+      if (btn) {
+        btn.textContent = 'Send Message';
+        btn.disabled    = false;
+      }
+      if (msgEl) {
+        msgEl.style.color = '#ef4444';
+        msgEl.textContent = '❌ Failed to send. Please email me directly at rivindinethasha@gmail.com';
+      }
+    });
+    /* ↑ semicolon here — after .catch(), not after the closing } of sendMsg */
+
+  }; /* end sendMsg */
+
+
+  console.log(`✅ Nethasha De Silva Portfolio v5 — ready!`);
+
+}); /* end DOMContentLoaded */
